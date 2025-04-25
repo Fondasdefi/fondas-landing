@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fondas - Simplifying DeFi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: #000; color: #fff; }
+    .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+    .hero { text-align: center; margin-bottom: 2rem; }
+    .hero img { height: 80px; margin-bottom: 1rem; }
+    .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; color: #B9A46B; }
+    .hero p { font-size: 1.25rem; margin-bottom: 1.5rem; color: #ccc; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #B9A46B; color: #000; border: none; border-radius: 10px; text-decoration: none; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s ease; }
+    .btn:hover { transform: scale(1.05); }
+    .section { margin-bottom: 3rem; }
+    .section h2 { font-size: 2rem; margin-bottom: 1rem; color: #B9A46B; text-align: center; }
+    .features ul { list-style: none; }
+    .features li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; font-size: 1.1rem; }
+    .features li::before { content: '✓'; position: absolute; left: 0; color: #B9A46B; font-weight: bold; }
+    .how-it-works ol { counter-reset: step; list-style: none; padding-left: 0; }
+    .how-it-works li { counter-increment: step; margin-bottom: 1.25rem; padding-left: 2rem; position: relative; font-size: 1.1rem; }
+    .how-it-works li::before { content: counter(step); position: absolute; left: 0; top: 0; background: #B9A46B; color: #000; width: 1.75rem; height: 1.75rem; text-align: center; line-height: 1.75rem; border-radius: 50%; font-weight: bold; }
+    .referral-gen input[type="text"] { width: 100%; padding: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #111; color: #fff; }
+    #ref-output { display: none; margin-top: 1rem; }
+    #ref-output input { width: 100%; padding: 0.75rem; border: 1px solid #333; border-radius: 4px; margin-bottom: 0.75rem; background: #111; color: #fff; }
+    footer { text-align: center; font-size: 0.875rem; color: #555; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <img src="https://dhedge.org/_next/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1843624248134291456%2F9Kz9_LYR_200x200.jpg&w=128&q=75" alt="Fondas Logo" />
+      <h1>Fondas</h1>
+      <p>Simplifying DeFi: Deposit USDC in 3 clicks and earn yield instantly.</p>
+      <a href="https://dhedge.org/vault/0xcc65077153fcc0dd2b12da8d387f66258b53a80f" target="_blank" class="btn">Deposit Now</a>
+    </section>
+
+    <section class="features section">
+      <h2>Why Choose Fondas?</h2>
+      <ul>
+        <li>Automated strategies: no manual rebalances</li>
+        <li>Non-custodial: you keep full control of your funds</li>
+        <li>Transparent dashboard: track yields in real-time</li>
+        <li>Stablecoin focus: consistent, low-volatility returns</li>
+      </ul>
+    </section>
+
+    <section class="how-it-works section">
+      <h2>How It Works</h2>
+      <ol>
+        <li>Connect your wallet</li>
+        <li>Deposit USDC</li>
+        <li>Start earning yield</li>
+      </ol>
+    </section>
+
+    <section class="referral-gen section">
+      <h2>Your Referral Link</h2>
+      <p>Paste your Ethereum address to generate your personalized link:</p>
+      <input id="wallet-input" type="text" placeholder="0xYourWalletAddress">
+      <button id="gen-ref-btn" class="btn">Generate Link</button>
+      <div id="ref-output">
+        <input id="ref-link" type="text" readonly>
+        <button id="copy-btn" class="btn">Copy Link</button>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Fondas. Simplifying DeFi.
+    </footer>
+  </div>
+
+  <script>
+    const vault = '0xcc65077153fcc0dd2b12da8d387f66258b53a80f';
+    document.getElementById('gen-ref-btn').onclick = () => {
+      const addr = document.getElementById('wallet-input').value.trim();
+      if (/^0x[a-fA-F0-9]{40}$/.test(addr)) {
+        const link = `https://dhedge.org/vault/${vault}?ref=${addr}`;
+        document.getElementById('ref-link').value = link;
+        document.getElementById('ref-output').style.display = 'block';
+      } else {
+        alert('Please enter a valid Ethereum address.');
+      }
+    };
+    document.getElementById('copy-btn').onclick = () => {
+      const refInput = document.getElementById('ref-link');
+      refInput.select();
+      document.execCommand('copy');
+      alert('Referral link copied to clipboard!');
+    };
+  </script>
+</body>
+</html>
