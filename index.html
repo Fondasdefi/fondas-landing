@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fondas - Simplifying DeFi</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://dhedge.org/_next/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1843624248134291456%2F9Kz9_LYR_200x200.jpg&w=128&q=75">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N713KD26BL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}  
+    gtag('js', new Date());
+    gtag('config', 'G-N713KD26BL');
+  </script>
+  <title>Simplifying DeFi - Fondas</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Open Sans', sans-serif; background: #000; color: #fff; }
     .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
     .hero { text-align: center; margin-bottom: 2rem; }
-    .hero img { height: 80px; margin-bottom: 1rem; }
-    .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; color: #B9A46B; }
+    .hero img { height: 120px; margin-bottom: 1rem; }
     .hero p { font-size: 1.25rem; margin-bottom: 1.5rem; color: #ccc; }
     .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #B9A46B; color: #000; border: none; border-radius: 10px; text-decoration: none; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s ease; }
     .btn:hover { transform: scale(1.05); }
@@ -31,12 +40,10 @@
 <body>
   <div class="container">
     <section class="hero">
-      <img src="https://dhedge.org/_next/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1843624248134291456%2F9Kz9_LYR_200x200.jpg&w=128&q=75" alt="Fondas Logo" />
-      <h1>Fondas</h1>
+      <img src="https://dhedge.org/_next/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1843624248134291456%2F9Kz9_LYR_200x200.jpg&w=128&q=75" alt="Fondas Logo">
       <p>Simplifying DeFi: Deposit USDC in 3 clicks and earn yield instantly.</p>
       <a href="https://dhedge.org/vault/0xcc65077153fcc0dd2b12da8d387f66258b53a80f" target="_blank" class="btn">Deposit Now</a>
     </section>
-
     <section class="features section">
       <h2>Why Choose Fondas?</h2>
       <ul>
@@ -46,7 +53,6 @@
         <li>Stablecoin focus: consistent, low-volatility returns</li>
       </ul>
     </section>
-
     <section class="how-it-works section">
       <h2>How It Works</h2>
       <ol>
@@ -55,7 +61,6 @@
         <li>Start earning yield</li>
       </ol>
     </section>
-
     <section class="referral-gen section">
       <h2>Your Referral Link</h2>
       <p>Paste your Ethereum address to generate your personalized link:</p>
@@ -66,12 +71,10 @@
         <button id="copy-btn" class="btn">Copy Link</button>
       </div>
     </section>
-
     <footer>
       © 2025 Fondas. Simplifying DeFi.
     </footer>
   </div>
-
   <script>
     const vault = '0xcc65077153fcc0dd2b12da8d387f66258b53a80f';
     document.getElementById('gen-ref-btn').onclick = () => {
